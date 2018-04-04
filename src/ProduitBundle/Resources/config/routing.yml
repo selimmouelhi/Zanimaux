@@ -1,0 +1,15 @@
+produit_homepage:
+    path:     /
+    defaults: { _controller: ProduitBundle:Default:index }
+
+produit_membreafficher:
+    path:     /produitaff
+    defaults: { _controller: ProduitBundle:Produit:afficherpm }
+
+produit_membreedisplay:
+    path:     /display/{id}
+    defaults: { _controller: ProduitBundle:Produit:displaypm }
+
+produit_addMembre:
+    path:     /addProduct
+    defaults: { _controller: ProduitBundle:Produit:addProduct }

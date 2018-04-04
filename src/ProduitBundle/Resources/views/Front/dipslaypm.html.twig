@@ -1,0 +1,57 @@
+{% extends 'PidevBundle::layoutMembre.html.twig' %}
+{% block title %}Detailed Product {% endblock %}
+{% block big_title %}Detailed Product :{% endblock %}
+
+{% block contenu %}
+
+
+<div class="main">
+    <div class="shop_top">
+        <div class="container">
+
+            <div class="row shop_box-top">
+
+
+            <div class="col-md-3 shop_box" style="display: inline" >
+
+                <img src="  {{ asset('images/'~ produit.url)}} " style="border: #0000F0;border: 10px" >
+
+
+                </div><br><br>
+
+
+                <div class="col-md-3 shop_box" style=" left: 102.6px; display: block"; >
+                     <p style="font-family: bold;font-size: x-large" > Title : {{ produit.titre }}</p><br><br>
+                    <p style="font-family: bold;font-size: x-large" > Location : {{ produit.adresse }}</p><br>
+                    <p style="font-family: bold;font-size: x-large" > Created in : {{ produit.dateCreation|date("m/d/Y") }}</p><br>
+                    <p style="font-family: bold;font-size: x-large;color: #843534" > Description :</p><br>
+                    <p style="font-family: bold;font-size: medium" > {{ produit.information }}</p><br>
+                    <p style="font-family: bold;font-size: medium" > This product is owned by Mr {{ user.nom }}</p><br>
+                    <p style="font-family: Arial">Posted in :{{ produit.datePost|date("m/d/Y") }} </p>
+                    <div id="ee" style="display: inline">
+                      <p style="font-family: bold;font-size: x-large" > Price :</p>
+                        <p style="font-family: bold;font-size: xx-large;color: red;right: 100px" > {{ produit.prix }} D</p>
+                        <link rel="icon" href="{{ asset('images/'~ produit.url)}} " type="image/jpg">
+
+                </div>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+
+{% endblock %}

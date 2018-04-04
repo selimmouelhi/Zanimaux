@@ -1,0 +1,15 @@
+pidev_homepage:
+    path:     /index
+    defaults: { _controller: PidevBundle:Default:indexFront  }
+
+pidev_front_homepage:
+    path:     /front
+    defaults: { _controller: PidevBundle:Default:indexFront }
+
+pidev_back_homepage:
+    path:     /back
+    defaults: { _controller: PidevBundle:Default:indexBack }
+
+pidev_login:
+    path:     /login1
+    defaults: { _controller: PidevBundle:Default:login }

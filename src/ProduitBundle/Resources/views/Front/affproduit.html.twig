@@ -1,0 +1,100 @@
+{% extends 'PidevBundle::layoutMembre.html.twig' %}
+{% block title %}Available Products{% endblock %}
+{% block big_title %}Products List :{% endblock %}
+
+{% block contenu %}
+
+    <div class="main">
+        <div class="menu" >
+            <a class="toggleMenu" href="#" ><img src={{ asset('img/nav.png') }} alt=""/ ></a>
+            <ul >
+                <li >
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <a href="#">My Products</a>
+                    {% endif %}
+                </li>
+                <li >
+
+                        <a href="{{ path('produit_membreafficher') }}">Available Products</a>
+
+                </li>
+                <li >
+                    <div style="display:inline;">
+
+
+                        <a href="{{ path('produit_addMembre') }}">Search Product</a>
+                    </div>     
+                </li>
+                <div class="clear"></div>
+            </ul>
+
+            <script type="text/javascript" src={{ asset('js/responsive-nav.js') }}></script>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    <h2 align="center"> Products List</h2>
+    <p align="center"> Here are all the available products</p>
+        <div class="shop_top">
+            <div class="container">
+
+                <div class="row shop_box-top">
+
+
+
+
+    {% for produit in produits %}
+
+
+        <div class="col-md-3 shop_box">
+            <a href="{{ path('produit_membreedisplay',{'id':produit.id}) }}">    <img src=" {{ asset('images/'~ produit.url)}} " sizes="10*10px" > </a>
+            <div class="shop_desc">
+            <a href="{{ path('produit_membreedisplay',{'id':produit.id}) }}"> {{produit.titre}} </a>
+            </div>
+            <div class="clear">
+            </div>
+
+
+        </div>
+    {% endfor %}
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+<script type="javascript">
+    $(window).load(function() {
+    $("#flexiselDemo3").flexisel({
+    visibleItems: 5,
+    animationSpeed: 1000,
+    autoPlay: true,
+    autoPlaySpeed: 3000,
+    pauseOnHover: true,
+    enableResponsiveBreakpoints: true,
+    responsiveBreakpoints: {
+    portrait: {
+    changePoint:480,
+    visibleItems: 1
+    },
+    landscape: {
+    changePoint:640,
+    visibleItems: 2
+    },
+    tablet: {
+    changePoint:768,
+    visibleItems: 3
+    }
+    }
+    });
+
+    });
+</script>
+
+{% endblock %}

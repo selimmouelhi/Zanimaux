@@ -1,0 +1,23 @@
+{% extends 'PidevBundle::layoutMembre.html.twig' %}
+{% block title %}Add Product{% endblock %}
+{% block big_title %}Add Product :{% endblock %}
+{% block contenu %}
+    <fieldset>
+
+    {{ form_start(form) }}
+        <div align="center" style="background-color: lightgray" >
+    Title :
+    {{ form_widget(form.titre) }}<br><br><br><br>
+            Creation Date :
+    {{ form_widget(form.date_creation) }}<br><br><br>
+    Adresse :
+    {{ form_widget(form.adresse) }}<br><br><br>
+    Price :
+    {{ form_widget(form.prix) }}<br><br><br>
+    Information
+    {{ form_widget(form.information) }}<br><br><br>
+
+    {{ form_end(form) }}
+        </div>
+    </fieldset>
+{% endblock %}
